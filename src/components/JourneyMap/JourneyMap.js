@@ -28,25 +28,11 @@ const JourneyMap = () => {
   return (
     <div className="journey-map">
       <div className="journey-map__container">
-        {/* Desktop diagonal path */}
-        <svg className="journey-map__svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-          {/* Curved dashed connector path */}
-          <path
-            className="journey-map__path"
-            d="M 150 350 Q 300 150, 450 350 T 750 350"
-            fill="none"
-            stroke="url(#purpleGradient)"
-            strokeWidth="3"
-            strokeDasharray="8,6"
-          />
-          <defs>
-            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#9333EA" />
-              <stop offset="50%" stopColor="#A855F7" />
-              <stop offset="100%" stopColor="#D8B4FE" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {/* Title Section */}
+        <div className="journey-map__title">
+          <h1>Your Data Intelligence Journey</h1>
+          <p>Follow our proven roadmap to transform your business with data insights</p>
+        </div>
 
         {/* Steps container */}
         <div className="journey-map__steps">

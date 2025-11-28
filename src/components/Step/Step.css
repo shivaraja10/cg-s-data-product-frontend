@@ -17,16 +17,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin: 2rem 1rem;
+  gap: 1.5rem;
+  margin: 0;
   flex: 1;
-  min-width: 200px;
-  max-width: 340px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0 1rem;
 }
 
 .step--get-started {
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .step__header {
@@ -39,8 +40,8 @@
 }
 
 .step__circle {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary-purple) 0%, var(--purple-light) 100%);
   display: flex;
@@ -51,6 +52,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: 2px solid transparent;
+  flex-shrink: 0;
 }
 
 .step__circle:hover {
@@ -90,11 +92,12 @@
 
 .step__title {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--neutral-dark);
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .step__info-icon {
@@ -129,13 +132,23 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .step {
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     max-width: 100%;
+    padding: 0;
+    align-items: flex-start;
+    padding-left: 2rem;
+  }
+
+  .step__header {
+    align-items: flex-start;
   }
 
   .step__circle {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
+    position: relative;
+    left: -2.75rem;
+    top: -0.25rem;
   }
 
   .step__number {
@@ -143,26 +156,29 @@
   }
 
   .step__title {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    text-align: left;
   }
 }
 
 @media (max-width: 480px) {
   .step {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     min-width: auto;
+    padding-left: 1.5rem;
   }
 
   .step__circle {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
+    left: -2.25rem;
   }
 
   .step__number {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .step__title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }

@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './GetStarted.css';
 
 const GetStarted = () => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    alert('Get Started clicked! Page navigation would go here.');
+    navigate('/get-started');
   };
 
   return (

@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,17 +12,38 @@
 }
 
 .journey-map__container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
 
-/* Desktop - Diagonal layout */
+/* Title section */
+.journey-map__title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.journey-map__title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neutral-dark);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.journey-map__title p {
+  font-size: 1.1rem;
+  color: #6B7280;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Desktop - Horizontal roadmap layout */
 .journey-map__svg {
   display: block;
   width: 100%;
-  height: 400px;
-  margin-bottom: 2rem;
+  height: 300px;
+  margin-bottom: 3rem;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 
@@ -32,32 +53,54 @@
 }
 
 .journey-map__steps {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  margin: 4rem 0;
-  flex-wrap: wrap;
+  margin: 3rem 0;
+  align-items: start;
+  position: relative;
+}
+
+/* Horizontal connector line */
+.journey-map__steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #9333EA 0%, #A855F7 50%, #D8B4FE 100%);
+  z-index: 0;
+  display: none; /* Hidden by default, shown on desktop */
 }
 
 .journey-map__cta {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  margin-top: 4rem;
+  padding-top: 2rem;
 }
 
-/* step wrapper positions - absolute in container for pixel-perfect placement */
-.step-wrapper { display: block; }
+/* step wrapper positions */
+.step-wrapper { 
+  display: block;
+  position: relative;
+  z-index: 1;
+}
 
 /* Tablet - Adjusted spacing */
 @media (max-width: 1024px) {
   .journey-map {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+  }
+
+  .journey-map__title h1 {
+    font-size: 2rem;
   }
 
   .journey-map__svg {
-    height: 350px;
+    height: 250px;
   }
 
   .journey-map__steps {
@@ -68,7 +111,15 @@
 /* Mobile - Stacked timeline layout */
 @media (max-width: 768px) {
   .journey-map {
-    padding: 2rem 0.5rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .journey-map__title h1 {
+    font-size: 1.75rem;
+  }
+
+  .journey-map__title p {
+    font-size: 1rem;
   }
 
   .journey-map__container {
@@ -80,27 +131,27 @@
   }
 
   .journey-map__steps {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
     gap: 0;
-    padding: 1rem 2rem 1rem 2.5rem;
+    padding: 1rem 0 1rem 3rem;
     position: relative;
   }
 
   /* Timeline vertical line */
   .journey-map__steps::before {
-    content: '';
+    display: block;
     position: absolute;
-    left: 1.75rem;
+    left: 1.5rem;
     top: 0;
     bottom: 0;
-    width: 3px;
+    width: 2px;
+    height: auto;
     background: linear-gradient(180deg, var(--primary-purple) 0%, var(--purple-light) 100%);
     border-radius: 2px;
   }
 
   .journey-map__cta {
-    padding: 0 2rem;
+    padding: 0;
   }
 }
 
@@ -140,18 +191,22 @@
 
 @media (max-width: 480px) {
   .journey-map {
-    padding: 1.5rem 0.5rem;
+    padding: 2rem 0.75rem;
+  }
+
+  .journey-map__title h1 {
+    font-size: 1.5rem;
   }
 
   .journey-map__steps {
-    padding: 1rem 1.5rem 1rem 2rem;
+    padding: 1rem 0 1rem 2.5rem;
   }
 
   .journey-map__steps::before {
-    left: 1rem;
+    left: 1.2rem;
   }
 
   .journey-map__cta {
-    padding: 0 1rem;
+    padding: 0;
   }
 }
