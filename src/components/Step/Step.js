@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Step.css';
 import InfoCard from '../InfoCard/InfoCard';
 
-const Step = ({ number, title, description, isGetStarted = false }) => {
+const Step = ({ number, title, description, image, isGetStarted = false }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   const toggleInfo = () => {
@@ -46,6 +46,7 @@ const Step = ({ number, title, description, isGetStarted = false }) => {
         <InfoCard
           title={title}
           description={description}
+          image={image}
           onClose={() => setShowInfo(false)}
         />
       )}

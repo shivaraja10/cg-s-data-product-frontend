@@ -10,18 +10,21 @@ const JourneyMap = () => {
       title: 'Discovery Phase',
       description:
         'Explore and understand the business requirements. Conduct stakeholder interviews, analyze market trends, and identify key opportunities for innovation and growth.',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
     },
     {
       number: 2,
       title: 'Prototype Evaluation',
       description:
         'Design and test interactive prototypes. Gather user feedback through iterative testing, refine concepts, and validate the direction before full development.',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
     },
     {
       number: 3,
       title: 'Data Ingestion',
       description:
         'Integrate data sources and pipelines. Set up robust data collection, transformation, and storage systems to support real-time analytics and insights.',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=300&fit=crop',
     },
   ];
 
@@ -42,6 +45,7 @@ const JourneyMap = () => {
               number={step.number}
               title={step.title}
               description={step.description}
+              image={step.image}
             />
           ))}
         </div>
