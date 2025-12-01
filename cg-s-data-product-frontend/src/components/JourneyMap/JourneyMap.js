@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './JourneyMap.css';
 import Step from '../Step/Step';
 import GetStarted from '../GetStarted/GetStarted';
 
 const JourneyMap = () => {
+  const [hoveredStep, setHoveredStep] = useState(null);
+
   const steps = [
     {
       number: 1,
@@ -40,13 +42,19 @@ const JourneyMap = () => {
         {/* Steps container */}
         <div className="journey-map__steps">
           {steps.map((step) => (
-            <Step
+            <div
               key={step.number}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              image={step.image}
-            />
+              className={`journey-map__step-wrapper ${hoveredStep === step.number ? 'hovered' : ''}`}
+              onMouseEnter={() => setHoveredStep(step.number)}
+              onMouseLeave={() => setHoveredStep(null)}
+            >
+              <Step
+                number={step.number}
+                title={step.title}
+                description={step.description}
+                image={step.image}
+              />
+            </div>
           ))}
         </div>
 

@@ -48,10 +48,13 @@ const GetStartedPage = () => {
         <div className="get-started-page__contact">
           <h2 className="get-started-page__contact-title">Ready to begin?</h2>
           <p className="get-started-page__contact-text">
-            Schedule a consultation with our team to get started today.
+            Start with Phase 1 and begin your data discovery journey.
           </p>
-          <button className="get-started-page__contact-btn">
-            Contact Our Team
+          <button 
+            className="get-started-page__contact-btn"
+            onClick={() => navigate('/data-discovery')}
+          >
+            Start with Phase 1
           </button>
         </div>
       </div>

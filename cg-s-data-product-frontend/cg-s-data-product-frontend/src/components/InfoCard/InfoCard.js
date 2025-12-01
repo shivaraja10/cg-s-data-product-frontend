@@ -1,7 +1,7 @@
 import React from 'react';
 import './InfoCard.css';
 
-const InfoCard = ({ title, description, image }) => {
+const InfoCard = ({ title, description, image, onClose }) => {
   return (
     <div className="info-card" onClick={(e) => e.stopPropagation()}>
       {image && (
@@ -11,11 +11,19 @@ const InfoCard = ({ title, description, image }) => {
             alt={title}
             className="info-card__image"
           />
-          <div className="info-card__overlay"></div>
         </div>
       )}
       <div className="info-card__content">
-        <h4 className="info-card__title">{title}</h4>
+        <div className="info-card__header">
+          <h4 className="info-card__title">{title}</h4>
+          <button
+            className="info-card__close"
+            onClick={onClose}
+            aria-label="Close information"
+          >
+            ✕
+          </button>
+        </div>
         <p className="info-card__description">{description}</p>
       </div>
     </div>
