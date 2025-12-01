@@ -10,43 +10,32 @@ const JourneyMap = () => {
       title: 'Discovery Phase',
       description:
         'Explore and understand the business requirements. Conduct stakeholder interviews, analyze market trends, and identify key opportunities for innovation and growth.',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop',
     },
     {
       number: 2,
       title: 'Prototype Evaluation',
       description:
         'Design and test interactive prototypes. Gather user feedback through iterative testing, refine concepts, and validate the direction before full development.',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
     },
     {
       number: 3,
       title: 'Data Ingestion',
       description:
         'Integrate data sources and pipelines. Set up robust data collection, transformation, and storage systems to support real-time analytics and insights.',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&h=300&fit=crop',
     },
   ];
 
   return (
     <div className="journey-map">
       <div className="journey-map__container">
-        {/* Desktop diagonal path */}
-        <svg className="journey-map__svg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid meet">
-          {/* Curved dashed connector path */}
-          <path
-            className="journey-map__path"
-            d="M 150 350 Q 300 150, 450 350 T 750 350"
-            fill="none"
-            stroke="url(#purpleGradient)"
-            strokeWidth="3"
-            strokeDasharray="8,6"
-          />
-          <defs>
-            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#9333EA" />
-              <stop offset="50%" stopColor="#A855F7" />
-              <stop offset="100%" stopColor="#D8B4FE" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {/* Title Section */}
+        <div className="journey-map__title">
+          <h1>Your Data Intelligence Journey</h1>
+          <p>Follow our proven roadmap to transform your business with data insights</p>
+        </div>
 
         {/* Steps container */}
         <div className="journey-map__steps">
@@ -56,6 +45,7 @@ const JourneyMap = () => {
               number={step.number}
               title={step.title}
               description={step.description}
+              image={step.image}
             />
           ))}
         </div>
